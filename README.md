@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/nikitachernov/FutureProof.png)](https://travis-ci.org/nikitachernov/FutureProof)
-
 # FutureProof
+
+[![Build Status](https://travis-ci.org/nikitachernov/FutureProof.png)](https://travis-ci.org/nikitachernov/FutureProof)
 
 FutureProof provides concurrency extensions for Ruby.
 

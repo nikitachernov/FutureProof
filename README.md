@@ -24,7 +24,7 @@ Or install it yourself as:
 
     f = FutureProof::Future.new { |a, b| a + b }
 
-    f.call # => executing in a thread
+    f.call(1, 2) # => executing in a thread
 
     f.value # => returning value when ready
 

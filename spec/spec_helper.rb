@@ -1,0 +1,1 @@
+require 'future_proof'

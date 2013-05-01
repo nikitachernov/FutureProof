@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/[nikitachernov]/[FutureProof].png)](https://travis-ci.org/[nikitachernov]/[FutureProof])
+[![Build Status](https://travis-ci.org/nikitachernov/FutureProof.png)](https://travis-ci.org/nikitachernov/FutureProof)
 
 # FutureProof
 

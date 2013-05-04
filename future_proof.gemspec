@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['nikita.cernovs@gmail.com']
   spec.description   = %q{Ruby concurrency extenstions}
   spec.summary       = %q{Ruby concurrency extenstions}
-  spec.homepage      = ''
+  spec.homepage      = 'http://nikitachernov.github.io/FutureProof'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

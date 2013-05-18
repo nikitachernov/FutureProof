@@ -1,23 +1,25 @@
-class FutureProof::Future
-  def initialize(&block)
-    @block = block
-  end
+module FutureProof
+  class Future
+    def initialize(&block)
+      @block = block
+    end
 
-  def call(*args)
-    thread(*args)
-  end
+    def call(*args)
+      thread(*args)
+    end
 
-  def value(*args)
-    thread(*args).value
-  end
+    def value(*args)
+      thread(*args).value
+    end
 
-  def complete?
-    !thread.alive?
-  end
+    def complete?
+      !thread.alive?
+    end
 
-private
+  private
 
-  def thread(*args)
-    @thread ||= Thread.new { @block.call *args }
+    def thread(*args)
+      @thread ||= Thread.new { @block.call *args }
+    end
   end
 end

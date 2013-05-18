@@ -1,3 +1,7 @@
 require 'future_proof/version'
+require 'future_proof/exceptionable'
 require 'future_proof/future'
 require 'future_proof/thread_pool'
+require 'future_proof/future_queue'
+require 'future_proof/future_array'
+require 'future_proof/future_proof_exception'

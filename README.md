@@ -22,23 +22,31 @@ Or install it yourself as:
 
 ### Future
 
-    f = FutureProof::Future.new { |a, b| a + b }
+    future = FutureProof::Future.new { |a, b| a + b }
 
-    f.call(1, 2) # => executing in a thread
+    future.call(1, 2) # => executes in a thread
 
-    f.value # => returning value when ready
+    future.value # => returns value when ready
 
 ### ThreadPool
 
-    tp = FutureProof::ThreadPool.new(5)
+    thread_pool = FutureProof::ThreadPool.new(5)
 
     10.times do |i|
-      tp.submit(Proc.new { |a, b| a + b }, i, i + 1)
+      thread_pool.submit i, i + 1 do |a, b|
+        a + b
+      end
     end
 
-    tp.perform # executing 10 procs in 5 threads
+    thread_pool.perform # executing 10 procs in 5 threads
 
-    tp.values # releasing threads and returning values
+    thread_pool.values # releasing threads and returning values
+
+## Exceptions
+
+  If exception happens inside a thread it doesn't affect the whole process.
+  Exception is raised when accessing specific value:
+      thread_pool.values[3] # => raises exception
 
 ## Contributing
 

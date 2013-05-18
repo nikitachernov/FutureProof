@@ -60,9 +60,9 @@
 
 <pre><code>f = FutureProof::Future.new { |a, b| a + b }
 
-f.call(1, 2) # =&gt; executing in a thread
+f.call(1, 2) # =&gt; executes in a thread
 
-f.value # =&gt; returning value when ready
+f.value # =&gt; returns value when ready
 </code></pre>
 
 <h3>ThreadPool</h3>
@@ -73,9 +73,19 @@ f.value # =&gt; returning value when ready
   tp.submit(Proc.new { |a, b| a + b }, i, i + 1)
 end
 
-tp.perform # executing 10 procs in 5 threads
+tp.perform # executes 10 procs in 5 threads
 
-tp.values # releasing threads and returning values
+tp.values # releases threads and returns values
+</code></pre>
+
+<h3>Exceptions</h3>
+
+<p>
+  If exception happens inside a thread it doesn't affect the whole process.
+  Exception is raised when accessing specific value:
+</p>
+
+<pre><code>thread_pool.values[3] # => raises exception
 </code></pre>
 
 <h2>Contributing</h2>

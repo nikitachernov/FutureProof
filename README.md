@@ -38,9 +38,9 @@ Or install it yourself as:
       end
     end
 
-    thread_pool.perform # executing 10 procs in 5 threads
+    thread_pool.perform # executes 10 procs in 5 threads
 
-    thread_pool.values # releasing threads and returning values
+    thread_pool.values # releases threads and returns values
 
 ## Exceptions
 

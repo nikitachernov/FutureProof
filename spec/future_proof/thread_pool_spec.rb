@@ -60,7 +60,6 @@ describe FutureProof::ThreadPool do
     end
   end
 
-
   describe '#finalize!' do
     it 'should not start executing not started tasks' do
       5.times { thread_pool.submit(24, 2, &task) }

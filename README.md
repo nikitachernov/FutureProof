@@ -44,9 +44,9 @@ Or install it yourself as:
 
 ## Exceptions
 
-  If exception happens inside a thread it doesn't affect the whole process.
-  Exception is raised when accessing specific value:
-      thread_pool.values[3] # => raises exception
+If exception happens inside a thread it doesn't affect the whole process.  Exception is raised when accessing specific value:
+
+    thread_pool.values[3] # => raises exception
 
 ## Contributing
 

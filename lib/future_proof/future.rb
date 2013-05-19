@@ -34,12 +34,12 @@ module FutureProof
       thread(*args).value
     end
 
-    # Return true if Future is done working.
+    # Return true if +Future+ is done working.
     #
     # @exmaple Get state of +Future+
     #   future.complete?
     #
-    # @return [true, galse] true if +Future+ is done working.
+    # @return [true, false] true if +Future+ is done working.
     def complete?
       !thread.alive?
     end

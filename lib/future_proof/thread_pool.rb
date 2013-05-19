@@ -51,7 +51,7 @@ module FutureProof
       @size.times { @queue.push :END_OF_WORK }
     end
 
-    # Calls #finalize and block programm flow until all jobs are processed.
+    # Calls #finalize and blocks programm flow until all jobs are processed.
     def wait
       finalize
       @threads.map &:join

@@ -71,7 +71,11 @@ describe FutureProof::ThreadPool do
   end
 
   describe 'exceptions' do
-    before { thread_pool.submit(24, 0, &task) }
+    before do
+      thread_pool.submit 24, 0 do |a, b|
+        a / b
+      end
+    end
 
     context 'without asking for specific value' do
       it 'should not raise exceptions' do

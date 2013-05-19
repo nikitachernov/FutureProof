@@ -1,4 +1,8 @@
 module FutureProof
+
+  # +FutureArray+ should be used to raise exceptions
+  # if specific values are exception instances
+  # on a direct access with #[], #first, #last, #each, #sort and so on.
   class FutureArray
     include Enumerable
     include FutureProof::Exceptionable
@@ -7,10 +11,14 @@ module FutureProof
       @arry = Array.new arg
     end
 
+    # Acces +FutureArray+ value by index.
     def [](index)
       raise_or_value @arry[index]
     end
 
+    # Array of values.
+    #
+    # @note raises an exception if any value if an exception.
     def all
       map { |a| a }
     end
@@ -21,6 +29,9 @@ module FutureProof
       end
     end
 
+    # Iterates through array elements.
+    #
+    # @note raises an error if any value is an exception.
     def each
       @arry.each { |a| yield raise_or_value(a) }
     end
